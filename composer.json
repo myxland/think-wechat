@@ -1,0 +1,27 @@
+{
+    "name": "myxland/think-wechat",
+    "description": "Thinkphp 5.1 Wechat Library, base on overtrue/wechat",
+    "type": "think-extend",
+    "license": "Apache-2.0",
+    "version": "1.0",
+    "authors": [
+        {
+            "name": "HWJ",
+            "email": "myxland@gmail.com"
+        }
+    ],
+    "require": {
+        "overtrue/wechat": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "myxland\\wechat\\": "src/"
+        },
+        "files": [
+            "src/helper.php"
+        ]
+    },
+    "post-install-cmd": [
+        "myxland\\wechat\\ComposerScripts::sendConfig"
+    ]
+}
