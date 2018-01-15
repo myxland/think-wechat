@@ -27,7 +27,12 @@ class Wechat
     public static function app($name)
     {
         if (! isset(self::$$name)) {
-            $config = config('wechat.' . $name);
+            if ($name == 'basicService') {
+                $channel = 'officialAccount';
+            } else {
+                $channel = $name;
+            }
+            $config = config('wechat.' . $channel);
             if (! $config) {
                 throw new \InvalidArgumentException("missing wechat config");
             }
